@@ -1,48 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
-      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
-      crossorigin="anonymous"
-    />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <title>Profile</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Roboto');
-      body{
-        padding: none;
-        margin: none;
-      }
-      header{
-        width: 100%;
-        height: 500px;
-        background-color: crimson;
-      }
-      #nav-bar{
-        width: 30%;
-        height: 60px;
-        background-color: rgb(33, 20, 220);
-      }
-    </style>
-  </head>
-  <body>
-    <header id="container-header">
-      <div id="nav-bar">
 
-      </div>
-      <div id="background-wrapper">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Rubik:wght@700&display=swap"
+    rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Profile</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+    /*Navigation bar*/
+    #nav-bar {
+      color: #bda06a;
+      font-size: 14px;
+      transition: 400ms ease-in-out;
+      background-color: #252c58;
+      transition: 350ms ease-in-out;
+    }
+
+    *::before,
+    *::after,
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      font-family: sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      height: 10000px;
+      box-sizing: border-box;
+    }
+
+    nav {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 5rem;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      margin: 0;
+    }
+
+    ul li {
+      padding: 1.5rem;
+      transition: 350ms ease-in-out;
+
+    }
+
+    ul li a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1em;
+      text-decoration: none;
+      color: #bda06a;
+    }
+
+    h2 {
+      position: absolute;
+      margin: 3rem;
+      margin-left: 7rem;
+      transition: 350ms ease-in-out;
+    }
+
+    .sticky {
+      position: sticky;
+      top: 0;
+      background-color: #252c58;
+    }
+
+    .item-scroll {
+      padding-right: 2.5rem;
+    }
+
+    .name-scroll {
+      margin: 1rem;
+      margin-left: 3rem;
+    }
+
+    /*Background*/
+    #background-wrapper {
+      height: 110vh;
+      background-color: #252c58;
+      z-index: 2;
+    }
+
+    .content {
+      margin: 2rem;
+      display: flex;
+      flex-direction: column;
+      height: 70vh;
+    }
+
+    .btn-group button {
+      background: #bda06a;
+      margin-right: 2rem;
+      cursor: pointer;
+      width: 20vh;
+      height: 6vh;
+      margin-top: 66vh;
+      --c:#DBCAB7;
+      color: #252c58;
+      font-size: 12px;
+      font-weight: bold;
+      border: none;
+      text-transform: uppercase;
+      border-radius: 0.2em;
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0.1em;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: 0.3s;
+      margin: 1em;
+      box-shadow: none;
+      transition: 350ms ease-in-out;
+      box-shadow: 0 8px 6px -6px black;
+    }
+
+    .row {
+      margin-right: 0px;
+    }
+
+    button:hover {
+      color: #3F2933;
+    }
+    button:active{
+      box-shadow: none;
+      background: #000000;
+    }
+    button span {
+      position: absolute;
+      width: 25%;
+      height: 100%;
+      background-color: var(--c);
+      transform: translateY(150%);
+      border-radius: 50%;
+      left: calc((var(--n) - 1) * 25%);
+      transition: 0.3s;
+      transition-delay: calc((var(--n) - 1) * 0.1s);
+      z-index: -1;
+    }
+
+    button:hover span {
+      transform: translateY(0) scale(2);
+    }
+
+    button span:nth-child(1) {
+      --n: 1;
+    }
+
+    button span:nth-child(2) {
+      --n: 2;
+    }
+
+    button span:nth-child(3) {
+      --n: 3;
+    }
+
+    button span:nth-child(4) {
+      --n: 4;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div id="nav-bar">
+      <h2>Jisoo</h2>
+      <nav>
+        <ul>
+          <li><a href="#section-1">TRANG CHỦ</a></li>
+          <li><a href="#section-2">THÔNG TIN</a></li>
+          <li><a href="#section-3">LIÊN HỆ</a></li>
+        </ul>
+    </div>
+  </header>
+  <div id="background-wrapper">
+    <div id="btn-wrapper">
+      <div class="row">
+        <div class="col-sm content">
+          <div class="btn-group" style="margin-top: 66vh;">
+            <button>Thông tin<span></span><span></span><span></span><span></span></button>
+            <button>Kỹ năng<span></span><span></span><span></span><span></span></button>
+            <button>Kinh nghiệm<span></span><span></span><span></span><span></span></button>
+          </div>
+        </div>
+        <div class="col-sm">
+          <img style="max-width: 100%;" src="images/k3lg1u0o5756u7qmrjjjudj6h0-be2cbb10a43856bef29a98ef8d346a1a.png" alt="">
+        </div>
+        <div class="col-sm">
+          One of three columns
+        </div>
       </div>
-    </header>
-    <div></div>
-    <div id="footer"></div>
-    <script>
-        
-    </script>
-  </body>
+    </div>
+  </div>
+  <div>
+    <p>eáodosjadio</p>
+
+    <p>eáodosjadio</p>
+    <p>eáodosjadio</p>
+    <p>eáodosjadio</p>
+    <p>eáodosjadio</p>
+  </div>
+  <div id="footer"></div>
+  <script>
+    $(document).ready(function () {
+      const headerEl = document.querySelector("header");
+      const headerTop = headerEl.offsetTop;
+      const navItems = document.querySelectorAll("nav ul li");
+      const headerName = document.querySelector("h2");
+      console.log("navItems", navItems);
+      console.log(headerTop + 20);
+      console.log(window.scrollY);
+
+      const stickyHandler = () => {
+        if (window.scrollY >= headerTop + 10) {
+          headerEl.classList.add("sticky");
+          navItems.forEach((item) => {
+            item.classList.add("item-scroll");
+          });
+          headerName.classList.add("name-scroll");
+        } else {
+          headerEl.classList.remove("sticky");
+          navItems.forEach((item) => {
+            item.classList.remove("item-scroll");
+          });
+          headerName.classList.remove("name-scroll");
+        }
+      };
+      window.addEventListener("scroll", stickyHandler);
+    });
+  </script>
+</body>
+
 </html>
