@@ -190,16 +190,52 @@
       filter: drop-shadow(5px -5px 17px #2b2b2b);
       transition: 1000ms ease-in-out;
     }
+
+    /*Down arrow*/
+    @primary: #fd6b21;
+
+
+    .arrow {
+      position: absolute;
+      text-align: center;
+      margin: 8% 0;
+      z-index: 99;
+    }
+
+    .bounce {
+      -moz-animation: bounce 2s infinite;
+      -webkit-animation: bounce 2s infinite;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-30px);
+      }
+
+      60% {
+        transform: translateY(-15px);
+      }
+    }
   </style>
 </head>
 
-<body>
+<body id="top">
   <header>
     <div id="nav-bar">
       <h2>Jisoo</h2>
       <nav>
         <ul>
-          <li><a href="#section-1">TRANG CHỦ</a></li>
+          <li><a id="main" href="#top">TRANG CHỦ</a></li>
           <li><a href="#section-2">THÔNG TIN</a></li>
           <li><a href="#section-3">LIÊN HỆ</a></li>
         </ul>
@@ -209,10 +245,13 @@
     <div id="btn-wrapper">
       <div class="row">
         <div class="col-sm content">
-          <div class="btn-group" style="margin-top: 66vh;">
-            <button id="btn-inform" onclick="showExp()">Thông tin<span></span><span></span><span></span><span></span></button>
-            <button id="btn-skill" onclick="showInform()">Kỹ năng<span></span><span></span><span></span><span></span></button>
-            <button id="btn-exp"onclick="showSkill()">Kinh nghiệm<span></span><span></span><span></span><span></span></button>
+          <div class="btn-group" style="margin-top: 63vh;">
+            <button id="btn-inform" onclick="showExp()">Thông
+              tin<span></span><span></span><span></span><span></span></button>
+            <button id="btn-skill" onclick="showInform()">Kỹ
+              năng<span></span><span></span><span></span><span></span></button>
+            <button id="btn-exp" onclick="showSkill()">Kinh
+              nghiệm<span></span><span></span><span></span><span></span></button>
           </div>
         </div>
         <div class="col-sm content">
@@ -223,7 +262,11 @@
           One of three columns
         </div>
       </div>
-      <div id="gradient"></div>
+      <div id="gradient">
+        <!-- <div class="arrow bounce">
+          <a style="color: white; text-decoration: none;" class="fa fa-arrow-down fa-2x" href="#"></a>
+        </div> -->
+      </div>
     </div>
   </div>
   <div>
@@ -261,15 +304,23 @@
         }
       };
       window.addEventListener("scroll", stickyHandler);
+
     });
-    function showInform(){
-      document.getElementById("image").src="images/pngfind.com-blackpink-png-1839440.png";
+    $('#main').click(function () {
+      var position = document.body.scrollTop || document.documentElement.scrollTop;
+      if (position) {
+        window.scrollBy(0, -Math.max(1, Math.floor(position / 10)));
+        scrollAnimation = setTimeout("scrollToTop()", 30);
+      } else clearTimeout(scrollAnimation);
+    });
+    function showInform() {
+      document.getElementById("image").src = "images/pngfind.com-blackpink-png-1839440.png";
     }
-    function showSkill(){
-      document.getElementById("image").src="images/pngfind.com-blackpink-png-901367.png";
+    function showSkill() {
+      document.getElementById("image").src = "images/pngfind.com-blackpink-png-901367.png";
     }
-    function showExp(){
-      document.getElementById("image").src="images/Untitled-1.png";
+    function showExp() {
+      document.getElementById("image").src = "images/Untitled-1.png";
     }
   </script>
 </body>
