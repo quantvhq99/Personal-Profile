@@ -97,7 +97,7 @@
     }
 
     .content {
-      margin: 2rem;
+      margin: 0.5rem;
       display: flex;
       flex-direction: column;
       height: 70vh;
@@ -107,10 +107,10 @@
       background: #bda06a;
       margin-right: 2rem;
       cursor: pointer;
-      width: 20vh;
+      width: 17vh;
       height: 6vh;
       margin-top: 66vh;
-      --c:#DBCAB7;
+      --c: #DBCAB7;
       color: #252c58;
       font-size: 12px;
       font-weight: bold;
@@ -137,10 +137,12 @@
     button:hover {
       color: #3F2933;
     }
-    button:active{
+
+    button:active {
       box-shadow: none;
       background: #000000;
     }
+
     button span {
       position: absolute;
       width: 25%;
@@ -173,6 +175,21 @@
     button span:nth-child(4) {
       --n: 4;
     }
+
+    #gradient {
+      position: relative;
+      height: 287px;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(6, 8, 33, 1) 9%, rgba(37, 44, 88, 0.8500350823923319) 43%, rgba(37, 44, 88, 0.6791667350533963) 62%, rgba(37, 44, 88, 0.0937325613839286) 100%);
+      z-index: 10;
+    }
+
+    img {
+      width: 150px;
+      -webkit-filter: drop-shadow(5px -5px 17px #474747);
+      filter: drop-shadow(5px -5px 17px #2b2b2b);
+      transition: 1000ms ease-in-out;
+    }
   </style>
 </head>
 
@@ -193,18 +210,20 @@
       <div class="row">
         <div class="col-sm content">
           <div class="btn-group" style="margin-top: 66vh;">
-            <button>Thông tin<span></span><span></span><span></span><span></span></button>
-            <button>Kỹ năng<span></span><span></span><span></span><span></span></button>
-            <button>Kinh nghiệm<span></span><span></span><span></span><span></span></button>
+            <button id="btn-inform" onclick="showExp()">Thông tin<span></span><span></span><span></span><span></span></button>
+            <button id="btn-skill" onclick="showInform()">Kỹ năng<span></span><span></span><span></span><span></span></button>
+            <button id="btn-exp"onclick="showSkill()">Kinh nghiệm<span></span><span></span><span></span><span></span></button>
           </div>
         </div>
-        <div class="col-sm">
-          <img style="max-width: 100%;" src="images/k3lg1u0o5756u7qmrjjjudj6h0-be2cbb10a43856bef29a98ef8d346a1a.png" alt="">
+        <div class="col-sm content">
+          <img id="image" style="width: 100%;" src="images/Untitled-1.png" alt="">
+
         </div>
         <div class="col-sm">
           One of three columns
         </div>
       </div>
+      <div id="gradient"></div>
     </div>
   </div>
   <div>
@@ -243,6 +262,15 @@
       };
       window.addEventListener("scroll", stickyHandler);
     });
+    function showInform(){
+      document.getElementById("image").src="images/pngfind.com-blackpink-png-1839440.png";
+    }
+    function showSkill(){
+      document.getElementById("image").src="images/pngfind.com-blackpink-png-901367.png";
+    }
+    function showExp(){
+      document.getElementById("image").src="images/Untitled-1.png";
+    }
   </script>
 </body>
 
