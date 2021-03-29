@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>How To Create jQuery Animated Progress Bar With Percentage Counter</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: arial;
+}
+.work-process {
+    max-width: 500px;
+    margin: 50px auto;
+}
+.work-process h3 {
+    margin: 30px 0px 10px;
+}
+.project-bar {
+    height: 18px;
+    background: #e0e0e0;
+    border-radius: 30px;
+}
+.project-percent {
+    height: 18px;
+    background-color: #2196F3;
+    border-radius: 30px;
+    position: relative;
+    width: 0;
+    transition: 2s linear;
+}
+.project-percent::before {
+    content: attr(percent);
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    padding: 1px 0px;
+    color: #ffffff;
+    font-size: 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    width: 20px;
+    margin: 0px auto;
+}
+</style>
+
+</head>
+<body data-rsssl=1>
+    <!-- Progress Bar -->
+    <div class="work-process">
+        <div class="project">
+            <h3>HTML</h3>
+            <div class="project-bar">
+                <div class="project-percent" percent="95"></div>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>CSS3</h3>
+            <div class="project-bar">
+                <div class="project-percent" percent="70"></div>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>Bootstrap 3/4</h3>
+            <div class="project-bar">
+                <div class="project-percent" percent="85"></div>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>jQuery</h3>
+            <div class="project-bar">
+                <div class="project-percent" percent="90"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+$('.project-percent').each(function(){
+    var $this = $(this);
+    var percent = $this.attr('percent');
+    $this.css("width",percent+'%');
+    $({animatedValue: 0}).animate({animatedValue: percent},{
+        duration: 2000,
+        step: function(){
+            $this.attr('percent', Math.floor(this.animatedValue) + '%');
+        },
+        complete: function(){
+            $this.attr('percent', Math.floor(this.animatedValue) + '%');
+        }
+    });
+});
+</script>
+
+</body>
+</html>
+

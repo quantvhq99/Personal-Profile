@@ -26,14 +26,13 @@
     @media screen and (max-width: 1920px) {
       body {
         background-color: rgb(245, 245, 245);
-        height: 10000px;
       }
 
       /*Header*/
       header {
         z-index: 1;
         background-color: #b8c6db;
-        background-image: linear-gradient(270deg, #b8c6db -51%, #f5f7fa 56%);
+        background: #1e2225;
         transition: 350ms ease-in-out;
       }
 
@@ -60,13 +59,13 @@
         font-family: 'Roboto', sans-serif;
         font-size: 14px;
         text-decoration: none;
-        color: #474747;
+        color: #e0e0e0;
         transition: 350ms ease-in-out;
       }
 
       a:hover {
+        color: #e7a632;
         text-decoration: none;
-        color: goldenrod;
       }
 
       h2 {
@@ -74,6 +73,7 @@
         margin: 5rem;
         margin-left: 10rem;
         transition: 350ms ease-in-out;
+        color: #e7a632;
       }
 
       .sticky {
@@ -85,7 +85,7 @@
 
       .item-scroll {
         padding-right: 2.5rem;
-        color: #ffffff;
+        color: #e0e0e0;
         display: flex;
         justify-content: flex-end;
       }
@@ -93,7 +93,7 @@
       .name-scroll {
         margin: 1rem;
         margin-left: 3rem;
-        color: rgb(255, 255, 255);
+        color: #e7a632;
       }
 
       /*Background*/
@@ -102,7 +102,7 @@
         height: 110vh;
         display: flex;
         justify-content: space-between;
-        background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
+        background: #1e2225;
       }
 
       #btn-group {
@@ -121,6 +121,15 @@
         height: 100%;
         z-index: 0;
         filter: drop-shadow(17px -2px 8px #222);
+        transition: 350ms ease-in-out;
+      }
+
+      .flip {
+        transform: rotateY(90deg);
+      }
+
+      .flip-again {
+        transform: rotateY(-90deg);
       }
 
       /*Button group*/
@@ -130,8 +139,6 @@
         width: 100%;
         height: auto;
       }
-
-
 
       .btn {
         /* Clean style */
@@ -144,15 +151,15 @@
         border: none;
         background: none;
         padding: 0;
-        color: var(--button-text-color);
+        color: #e7a632;
         cursor: pointer;
         /* Clean style */
 
         --button-text-color: var(--background-color);
         --button-text-color-hover: var(--button-background-color);
-        --border-color: #7D8082;
-        --button-background-color: #ece8e1;
-        --highlight-color: #000000af;
+        --border-color: #adadad;
+        --button-background-color: #ffffff;
+        --highlight-color: #e7a632;
         --button-inner-border-color: transparent;
         --button-bits-color: var(--background-color);
         --button-bits-color-hover: var(--button-background-color);
@@ -174,7 +181,7 @@
         right: 0;
         left: 0;
         height: calc(50% - 5px);
-        border: 1px solid var(--border-color);
+        border: 2px solid var(--border-color);
         transition: all .15s ease;
       }
 
@@ -208,6 +215,7 @@
       }
 
       .btn__inner {
+
         padding: 6px;
         position: relative;
         display: block;
@@ -279,7 +287,9 @@
         display: block;
       }
 
-      #infor, #skill, #exp {
+      #infor,
+      #skill,
+      #exp {
         margin-top: 20vh;
       }
 
@@ -289,52 +299,306 @@
         width: 100%;
         height: 60%;
       }
+
       @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
       @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam:wght@600&display=swap');
 
-h3{
-  color: goldenrod;
-  font-family: 'Be Vietnam', sans-serif;
-}
-.bla {
-  white-space: nowrap;
-  overflow: hidden;    
-  font-family: 'Source Code Pro', monospace;  
-  font-size: 21px;
-  color: rgba(0, 0, 0, 0.7);
-  margin-left: 15px;
-  margin-top: 6px;
-}
+      .bold {
+        font-weight: bold;
+        font-size: 13px;
+        color: #e7a632;
+      }
 
-/* Animation */
-.bla {
-  animation: animated-text 1s steps(29,end) 0s 1 normal both,
-             animated-cursor 100ms steps(29,end) infinite;
-}
-.bla-2{
-  animation: animated-text2 1s steps(29,end) 0s 1 normal both,
-             animated-cursor2 100ms steps(29,end) infinite;
-}
-/* text animation */
+      .bla {
+        white-space: nowrap;
+        overflow: hidden;
+        font-family: 'Source Code Pro', monospace;
+        font-size: 21px;
+        color: rgba(245, 245, 245, 0.7);
+      }
 
-@keyframes animated-text{
-  from{width: 0;}
-  to{width: 300px;}
-}
-@keyframes animated-text2{
-  from{width: 0;}
-  to{width: 450px;}
-}
-/* cursor animations */
+      /* Animation */
+      .bla {
+        animation: animated-text 1s steps(29, end) 0s 1 normal both,
+          animated-cursor 100ms steps(29, end) infinite;
+      }
 
-@keyframes animated-cursor{
-  from{border-right-color: rgba(0, 0, 0, 0.75);}
-  to{border-right-color: transparent;}
-}
-@keyframes animated-cursor2{
-  from{border-right-color: rgba(0, 0, 0, 0.75);}
-  to{border-right-color: transparent;}
-}
+      .bla-2 {
+        animation: animated-text2 1s steps(29, end) 0s 1 normal both,
+          animated-cursor2 100ms steps(29, end) infinite;
+      }
+
+      .work-process {
+        max-width: 500px;
+        margin: 50px auto;
+      }
+
+      .project-bar {
+        height: 15px;
+        background: #c4c4c4;
+      }
+
+      .project-percent {
+        height: 15px;
+        background-color: #161616;
+        position: relative;
+        transition: 1s linear;
+
+      }
+
+      .project-percent::before {
+        content: attr(percent);
+        position: absolute;
+        right: 0px;
+        left: 0px;
+        color: goldenrod;
+        font-size: 12px;
+        font-weight: bold;
+        width: 20px;
+        margin: -1px auto;
+      }
+
+      /* text animation */
+
+      @keyframes animated-text {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 300px;
+        }
+      }
+
+      @keyframes animated-text2 {
+        from {
+          width: 0;
+        }
+
+        to {
+          width: 450px;
+        }
+      }
+
+      /* cursor animations */
+
+      @keyframes animated-cursor {
+        from {
+          border-right-color: rgba(0, 0, 0, 0.75);
+        }
+
+        to {
+          border-right-color: transparent;
+        }
+      }
+
+      @keyframes animated-cursor2 {
+        from {
+          border-right-color: rgba(0, 0, 0, 0.75);
+        }
+
+        to {
+          border-right-color: transparent;
+        }
+      }
+
+      #container {
+        font-family: "IBM Plex Mono", monospace;
+        color: var(--dark);
+        overflow: hidden;
+      }
+
+      #settings {
+
+        color: var(--bright);
+        transition: right 0.2s;
+      }
+
+      #abt {
+        position: absolute;
+        top: -40vh;
+        left: calc(100vw - 40vh);
+        height: 60vh;
+        width: 60vh;
+        border-radius: 100%;
+        background: var(--dark);
+        transition: all 0.5s cubic-bezier(0.87, -0.2, 0.19, 1.2);
+      }
+
+      #txt {
+        position: absolute;
+        top: 42vh;
+        left: 12vh;
+        height: 22vh;
+        width: 25vh;
+        font-size: 1.5vh;
+        text-align: center;
+        color: var(--bright);
+        background: none;
+      }
+
+      #dm {
+        position: absolute;
+        top: 42vh;
+        right: -1vh;
+        width: 25vh;
+        font-size: 2.2vh;
+        cursor: pointer;
+      }
+
+      #barcontainer {
+
+        overflow: hidden;
+      }
+
+      #title {
+        margin-left: 10vw;
+
+      }
+
+      #yp,
+      #mp,
+      #dp,
+      #hp,
+      #mip {
+        margin-bottom: 1vh;
+        color: #adadad;
+      }
+
+      #ygraph,
+      #mgraph,
+      #dgraph,
+      #hgraph,
+      #migraph {
+        height: 1vh;
+        width: 22vw;
+        border: 1px solid #1e2225;
+        overflow: hidden;
+      }
+
+      #ybar,
+      #mbar,
+      #dbar,
+      #hbar,
+      #mibar {
+        height: 3vh;
+        width: 0vw;
+        background: #e7a632;
+        transition: width 0.5s;
+      }
+
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --dark: #fff;
+          --bright: #000;
+        }
+      }
+
+
+      /*Exp*/
+      @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+      .slider {
+        position: absolute;
+        top: 50%;
+        left: 19%;
+        transform: translate(-50%, -50%);
+        width: 400px;
+        height: 300px;
+        box-shadow: 3px 3px 10px rgba(0, 0, 0, .2);
+      }
+
+      .wrapper {
+        overflow: hidden;
+        position: relative;
+        width: 400px;
+        height: 300px;
+        z-index: 1;
+      }
+
+      .slides {
+        display: flex;
+        position: relative;
+        top: 0;
+        left: -400px;
+        width: 10000px;
+      }
+
+      .slides.shifting {
+        transition: left .2s ease-out;
+      }
+
+      .slide {
+        width: 400px;
+        height: 300px;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transition: all 1s;
+        position: relative;
+        background: #FFCF47;
+        border-radius: 2px;
+      }
+
+      .slider.loaded .slide:nth-child(2),
+      .slider.loaded .slide:nth-child(7) {
+        background: #ffcf47;
+      }
+
+      .slider.loaded .slide:nth-child(1),
+      .slider.loaded .slide:nth-child(6) {
+        background: #7adcef;
+      }
+
+      .slider.loaded .slide:nth-child(3) {
+        background: #3cff96;
+      }
+
+      .slider.loaded .slide:nth-child(4) {
+        background: #a78df5;
+      }
+
+      .slider.loaded .slide:nth-child(5) {
+        background: #ff8686;
+      }
+
+
+      .control {
+        position: absolute;
+        top: 50%;
+        width: 50px;
+        height: 50px;
+        background: #fff;
+        border-radius: 50px;
+        margin-top: -20px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.3);
+        z-index: 2;
+      }
+
+      .prev,
+      .next {
+        background-size: 22px;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+
+      .prev {
+        background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronLeft-512.png);
+        left: -20px;
+      }
+
+      .next {
+        background-image: url(https://cdn0.iconfinder.com/data/icons/navigation-set-arrows-part-one/32/ChevronRight-512.png);
+        right: -20px;
+      }
+
+      .prev:active,
+      .next:active {
+        transform: scale(.8);
+      }
     }
 
     @media screen and (max-width: 768px) {}
@@ -345,6 +609,13 @@ h3{
 <body>
   <header>
     <div id="nav-bar">
+      <div style="    width: 1%;
+      height: 7%;
+      background: #e7a632;
+      position: absolute;
+      margin-top: 4.5vh; transition: 350ms ease-in-out;">
+
+      </div>
       <h2>Quân</h2>
       <nav>
         <ul>
@@ -357,49 +628,70 @@ h3{
   <div id="background-wrapper">
     <div id="btn-group">
       <div id="show-ise">
-        <div id="infor" >
-         <div style="display:flex;">
-           <h3>Tên:</h3>
-           <p class="bla">Nguyễn Văn A</p>
-         </div>
-         <div style="display: flex;">
-          <h3>Năm sinh:</h3>
-          <p class="bla">1999</p>
-        </div>
-        <div style="display: flex;">
-          <h3>Chiều cao:</h3>
-          <p class="bla">1m62</p>
-        </div>
-        <div style="display: flex;">
-          <h3>Quê quán:</h3>
-          <p class="bla">Việt Nam</p>
-        </div>
-          
+        <div id="infor">
+          <div style="margin-left: 2rem;">
+            <span class="bold">TÊN:</span>
+            <p class="bla">Nguyễn Văn A</p>
+          </div>
+          <div style="margin-left: 4rem;">
+            <span class="bold">NĂM SINH:</span>
+            <p class="bla">1999</p>
+          </div>
+          <div style="margin-left: 6rem;">
+            <span class="bold">CHIỀU CAO:</span>
+            <p class="bla">1m62</p>
+          </div>
+          <div style="margin-left: 8rem;">
+            <span class="bold">QUÊ QUÁN :</span>
+            <p class="bla">Việt Nam</p>
+          </div>
+          <!-- <div style="margin-left: 2rem;">
+            <span class="bold">SỐ ĐO :</span>
+            <p class="bla">90 60 90</p>
+          </div> -->
+
         </div>
         <div id="skill">
-          <div>
-            <h6 class="bla">Dẫn chương trình:</h6>
-            
+          <div id="container">
+            <div id="barcontainer">
+              <div id="yp">Dẫn chương trình: <span id="ypp"></span></div>
+              <div id="ygraph">
+                <div id="ybar"></div>
+              </div>
+              <div id="mp">Thuyết trình: <span id="mpp"></span></div>
+              <div id="mgraph">
+                <div id="mbar"></div>
+              </div>
+              <div id="dp">Làm việc nhóm: <span id="dpp"></span></div>
+              <div id="dgraph">
+                <div id="dbar"></div>
+              </div>
+              <div id="hp">Giao tiếp: <span id="hpp"></span></div>
+              <div id="hgraph">
+                <div id="hbar"></div>
+              </div>
+              <div id="mip">Hoạt náo: <span id="mipp"></span></div>
+              <div id="migraph">
+                <div id="mibar"></div>
+              </div>
+            </div>
+
           </div>
-          <div>
-           <h6 class="bla">Thuyết trình:</h6>
-           
-         </div>
-         <div>
-           <h6 class="bla">Hoạt náo:</h6>
-           
-         </div>
-         <div>
-           <h6 class="bla">Làm việc nhóm:</h6>
-           
-         </div>
-         <div>
-          <h6 class="bla">Giao ti:</h6>
-          
-        </div>
         </div>
         <div id="exp">
-          <p>bla bla bla sdasdsadsd</p>
+          <div id="slider" class="slider">
+            <div class="wrapper">
+              <div id="slides" class="slides">
+                <span class="slide">Slide 1</span>
+                <span class="slide">Slide 2</span>
+                <span class="slide">Slide 3</span>
+                <span class="slide">Slide 4</span>
+                <span class="slide">Slide 5</span>
+              </div>
+            </div>
+            <a id="prev" class="control prev"></a>
+            <a id="next" class="control next"></a>
+          </div>
         </div>
       </div>
       <div id="btn-show">
@@ -424,9 +716,12 @@ h3{
       </div>
 
     </div>
+
     <div id="img-group">
+
       <img id="image" src="images/pngfind.com-blackpink-png-1839440.png" alt="">
     </div>
+
   </div>
   <div id="content">
     <p>blablablablablablablablablablablablabla</p>
@@ -437,8 +732,32 @@ h3{
     <p>blablablablablablablablablablablablabla</p>
     <p>blablablablablablablablablablablablabla</p>
   </div>
+  <style>
+    footer{
+      clear: both;
+    position: relative;
+    height: 200px;
+    background: #161616;
+    color: #c4c4c4;
+    font-size: 15px;
+    }
+  </style>
   <footer>
-
+      <div id="footer-left">
+        <p>QUÂN ĐẸP CHAI</p>
+        <p>Địa chỉ: Việt Nam</p>
+        <p>Số điện thoại: 012.456.789</p>
+        <p>Email: chiongvang@gmail.com</p>
+      </div>
+      <div id="footer-right">
+        <ul>
+          <li><a href="#">Link 01</a></li>
+          <li><a href="#">Link 02</a></li>
+          <li><a href="#">Link 03</a></li>
+          <li><a href="#">Link 04</a></li>
+          </ul>
+          <p>Copyright (c) 2021 QUÂN ĐẸP CHAI</p>
+      </div>
   </footer>
 </body>
 <script>
@@ -494,6 +813,7 @@ h3{
       $("#exp").show();
     });
   });
+
   $('#main').click(function () {
     var position = document.body.scrollTop || document.documentElement.scrollTop;
     if (position) {
@@ -502,14 +822,165 @@ h3{
     } else clearTimeout(scrollAnimation);
   });
   function showInform() {
-    document.getElementById("image").src = "images/pngfind.com-blackpink-png-1839440.png";
+    document.getElementById("image").classList.add("flip");
+    setTimeout(function () {
+      document.getElementById("image").classList.remove("flip")
+      document.getElementById("image").src = "images/pngfind.com-blackpink-png-1839440.png";
+    }, 350);
+
   }
   function showSkill() {
-    document.getElementById("image").src = "images/pngfind.com-blackpink-png-901367.png";
+    document.getElementById("image").classList.add("flip");
+    setTimeout(function () {
+      document.getElementById("image").classList.remove("flip")
+      document.getElementById("image").src = "images/pngfind.com-blackpink-png-901367.png";
+    }, 350);
+    let def_with = 22;
+    ///////////////////////////
+    //Main Interval
+    setInterval(() => {
+
+      ypp.innerHTML = 75 + "%";
+      ybar.style.width = def_with * 75 / 100 + "vw";
+      mpp.innerHTML = 50 + "%";
+      mbar.style.width = def_with * 50 / 100 + "vw";
+      //calculate percentage for day
+      dpp.innerHTML = 40 + "%";
+      dbar.style.width = def_with * 40 / 100 + "vw";
+      //calculate percentage for hour
+      hpp.innerHTML = 60 + "%";
+      hbar.style.width = def_with * 60 / 100 + "vw";
+      //calculate percentage for minute
+      mipp.innerHTML = 50 + "%";
+      mibar.style.width = def_with * 50 / 100 + "vw";
+    }, 1000);
   }
   function showExp() {
-    document.getElementById("image").src = "images/pngfind.com-blackpink-png-1839410.png";
+    document.getElementById("image").classList.add("flip");
+    setTimeout(function () {
+      document.getElementById("image").classList.remove("flip")
+      document.getElementById("image").src = "images/pngfind.com-blackpink-png-1839410.png";
+    }, 350);
+
   }
+  var slider = document.getElementById('slider'),
+    sliderItems = document.getElementById('slides'),
+    prev = document.getElementById('prev'),
+    next = document.getElementById('next');
+
+  function slide(wrapper, items, prev, next) {
+    var posX1 = 0,
+      posX2 = 0,
+      posInitial,
+      posFinal,
+      threshold = 100,
+      slides = items.getElementsByClassName('slide'),
+      slidesLength = slides.length,
+      slideSize = items.getElementsByClassName('slide')[0].offsetWidth,
+      firstSlide = slides[0],
+      lastSlide = slides[slidesLength - 1],
+      cloneFirst = firstSlide.cloneNode(true),
+      cloneLast = lastSlide.cloneNode(true),
+      index = 0,
+      allowShift = true;
+
+    // Clone first and last slide
+    items.appendChild(cloneFirst);
+    items.insertBefore(cloneLast, firstSlide);
+    wrapper.classList.add('loaded');
+
+    // Mouse events
+    items.onmousedown = dragStart;
+
+    // Touch events
+    items.addEventListener('touchstart', dragStart);
+    items.addEventListener('touchend', dragEnd);
+    items.addEventListener('touchmove', dragAction);
+
+    // Click events
+    prev.addEventListener('click', function () { shiftSlide(-1) });
+    next.addEventListener('click', function () { shiftSlide(1) });
+
+    // Transition events
+    items.addEventListener('transitionend', checkIndex);
+
+    function dragStart(e) {
+      e = e || window.event;
+      e.preventDefault();
+      posInitial = items.offsetLeft;
+
+      if (e.type == 'touchstart') {
+        posX1 = e.touches[0].clientX;
+      } else {
+        posX1 = e.clientX;
+        document.onmouseup = dragEnd;
+        document.onmousemove = dragAction;
+      }
+    }
+
+    function dragAction(e) {
+      e = e || window.event;
+
+      if (e.type == 'touchmove') {
+        posX2 = posX1 - e.touches[0].clientX;
+        posX1 = e.touches[0].clientX;
+      } else {
+        posX2 = posX1 - e.clientX;
+        posX1 = e.clientX;
+      }
+      items.style.left = (items.offsetLeft - posX2) + "px";
+    }
+
+    function dragEnd(e) {
+      posFinal = items.offsetLeft;
+      if (posFinal - posInitial < -threshold) {
+        shiftSlide(1, 'drag');
+      } else if (posFinal - posInitial > threshold) {
+        shiftSlide(-1, 'drag');
+      } else {
+        items.style.left = (posInitial) + "px";
+      }
+
+      document.onmouseup = null;
+      document.onmousemove = null;
+    }
+
+    function shiftSlide(dir, action) {
+      items.classList.add('shifting');
+
+      if (allowShift) {
+        if (!action) { posInitial = items.offsetLeft; }
+
+        if (dir == 1) {
+          items.style.left = (posInitial - slideSize) + "px";
+          index++;
+        } else if (dir == -1) {
+          items.style.left = (posInitial + slideSize) + "px";
+          index--;
+        }
+      };
+
+      allowShift = false;
+    }
+
+    function checkIndex() {
+      items.classList.remove('shifting');
+
+      if (index == -1) {
+        items.style.left = -(slidesLength * slideSize) + "px";
+        index = slidesLength - 1;
+      }
+
+      if (index == slidesLength) {
+        items.style.left = -(1 * slideSize) + "px";
+        index = 0;
+      }
+
+      allowShift = true;
+    }
+  }
+
+  slide(slider, sliderItems, prev, next);
 </script>
 
 </html>
